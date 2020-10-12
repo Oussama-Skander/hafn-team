@@ -1,0 +1,75 @@
+
+<header>
+  <div class="sidebar">
+    <header>HAN</header>
+    <nav>
+      <ul>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/home">     home     </a></li>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/organ">    organization    </a></li>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/creat">    create organization     </a></li>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/">     disconnect    </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="left">
+  <h1 class="h3 mb-4 text-gray-800">Projects List:</h1>
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">All projects</h6>
+    </div>
+
+    <label htmlFor="org-name">Organization/Team:</label>
+
+    <select
+      class="form-control form-control-lg"
+      [(ngModel)]="orgName"
+    >
+      <option *ngFor="let organization of organizationData">
+        {{ organization.name }}
+      </option>
+    </select>
+
+    <div class="card-body">
+      <ul class="list-group" *ngFor="let project of projectData">
+        <li class="list-group-item">
+          {{ this.project?.name }}
+          {{ this.project?.description }}
+        </li>
+        <button  class="btn btn-primary yallow" (click)="newProjectId(this.project.name) ; issFeatFunc()">State</button>
+        <button  class="btn btn-primary " (click)="newProjectId(this.project.name) ; featuresFunc()">add feat</button>
+        <button  class="btn btn-primary red" (click)="newProjectId(this.project.name) ; issuesFunc()">add issue</button>
+      </ul>
+    </div>
+    <button  class="btn btn-primary green" (click)="getOrgId()">comfirm</button>
+  </div>
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">All projects</h6>
+    </div>
+  
+    <label htmlFor="org-name">Other Organization:</label>
+  
+    <select class="form-control form-control-lg" [(ngModel)]="otherOrgName">
+      <option *ngFor="let otherOrganization of otherOrg" >
+      {{otherOrganization.name}}
+      </option>
+    </select>
+  
+    <div class="card-body">
+      <ul class="list-group" *ngFor="let project of otherProjectData">
+        <li class="list-group-item">
+          {{this.project?.name}} 
+          {{this.project?.description}}
+        </li>
+      <button  class="btn btn-primary yallow" (click)="newProjectId(this.project.name) ; issFeatFunc()">Features/Issues</button>
+      </ul>
+    </div>
+    <button  class="btn btn-primary" (click)="getOtherOrgId()">comfirm</button>
+  </div>
+  <button  class="btn btn-primary" routerLink="/createP">create new project</button>
+</div>
+
+
+

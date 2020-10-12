@@ -1,0 +1,73 @@
+
+
+<header>
+  <div class="sidebar">
+    <header>HAN</header>
+    <nav>
+      <ul>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/home">     home     </a></li>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/organ">    organization    </a></li>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/creat">    create organization     </a></li>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/">     disconnect    </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="left">
+  <h1 class="text-center text-primary">project Features</h1>
+  <div class="card-body">
+    <ul class="list-group" *ngFor="let element of feat">
+      <li class="list-group-item">
+        title: {{ this.element?.title }}
+        <br />
+        description: {{ this.element?.description }}
+        <br />
+        state :{{ this.element?.state }}
+        <button  class="btn btn-primary"
+          (click)="
+            updateFeat(
+              this.element?.projectID,
+              newState.value,
+              this.element?.title
+            )
+          "
+        >
+          update
+        </button>
+        <input type="text" #newState />
+        <br />
+        <button  class="btn btn-primary red" (click)="delFeat(this.element?.title)">delete</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="left">
+  <h1 class="text-center text-primary">Issues</h1>
+  <div class="card-body">
+    <ul class="list-group" *ngFor="let element of iss">
+      <li class="list-group-item">
+        title: {{ this.element?.title }}
+        <br />
+        description: {{ this.element?.description }}
+        <br />
+        state :{{ this.element?.state }}
+        <button  class="btn btn-primary"
+          (click)="
+            updateIss(
+              this.element?.projectID,
+              newState.value,
+              this.element?.title
+            )
+          "
+        >
+          update
+        </button>
+        <input type="text" #newState />
+        <br />
+        <button  class="btn btn-primary red" (click)="delIss(this.element?.title)">delete</button>
+      </li>
+    </ul>
+  </div>
+</div>

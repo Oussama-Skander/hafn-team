@@ -1,0 +1,40 @@
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+
+<header>
+  <div class="sidebar">
+    <header>HAN</header>
+    <nav>
+      <ul>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/home">     home     </a></li>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/organ">    organization    </a></li>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/creat">    create organization     </a></li>
+        <li><a href="#" class="fas fa-qrcode" routerLink="/">     disconnect    </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container left">
+    <form>
+      <div class="form-group">
+        <h1 class="text-center text-primary">Features</h1>
+        <div>
+          <span class="input-group-text">title</span>
+          <input #title type="text" class="form-control" name="title" />
+          <span class="input-group-text">description</span>
+          <input #description type="textarea" class="form-control" name="description" />
+          <span class="input-group-text">state</span>
+          <input #state type="text" class="form-control" name="state" />
+        </div>
+      </div>
+    </form>
+    <button  class="btn btn-primary green" (click)="collectFeature(title.value, description.value, state.value)">confirm</button>
+  </div>
+
+
+
