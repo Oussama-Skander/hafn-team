@@ -1,7 +1,7 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+// import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 
@@ -46,7 +46,9 @@ import { LandingComponent } from './landing/landing.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    HttpClient,
+    // HttpModule
 
   ],
 
